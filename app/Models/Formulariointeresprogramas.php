@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class FormularioMetro extends Model
+class Formulariointeresprogramas extends Model
 {
-    protected $table = 'formulario_metro';
+    protected $table = 'formulariointeresprogramas';
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = [

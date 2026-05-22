@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FormularioMetro; 
+use App\Models\Formulariointeresprogramas; 
 use Illuminate\Http\Request;
 
 class FormularioController extends Controller
 {
     public function store(Request $request)
-
-        FormularioMetro::create([
+{
+        Formulariointeresprogramas::create([
 
         'nombre1' => $request->nombre1,
             'nombre2' => $request->nombre2,
@@ -23,6 +23,7 @@ class FormularioController extends Controller
             'familiauniversidad' => $request->familiauniversidad,
             'responsabilidades' => $request->responsabilidades,
             'conquienvivira' => $request->conquienvivira,
+            'trabajo' => $request->trabajo,
             'llegadauniversidad' => $request->llegadauniversidad,
             'almuerzo' => $request->almuerzo,
             'reaccionantedificultad' => $request->reaccionantedificultad,
@@ -31,7 +32,9 @@ class FormularioController extends Controller
             'actividadsentirbien' => $request->actividadsentirbien,
             'interes' => $request->interes,
             'perteneceequipo' => $request->perteneceequipo,
+            'periodo'=> $request->periodo,
+            ]);
 
-
-        return redirect()->back()->with('success', 'Formulario guardado correctamente');}
+            return response()->json(['message' => '¡Formulario guardado con éxito!']);
+}
 }
