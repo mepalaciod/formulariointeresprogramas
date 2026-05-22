@@ -11,38 +11,12 @@
 <body>
     <img src="{{ asset('imagen.jpeg') }}" alt="Imagen" class="img-fluid">
 
-    <div class="">
-        <div class="box_informativo"><h1>SOLICITUD PERFIL ESTUDIANTIL (TIQUETE METRO)</h1>
-    <p>Si cumples con estos requisitos puedes aplicar al beneficio</p> 
-<ul>
-    <li>Si eres beneficiario de Sapiencia, ya sea por medio de Fondos en programas de pregrado o posgrado, o a través de la Matrícula Cero, tienes la posibilidad de acceder al perfil preferencial en tu tarjeta cívica del Metro de Medellín.</li>
-    <li>Residir en viviendas de estratos 1, 2 y 3.</li>
-    <li>Tener entre 10 y hasta 28 años en el momento de la inscripción, o ser una persona con discapacidad.</li>
-</ul>
-    <p>Es importante aclarar que, dentro de los medios de transporte que cubre este beneficio, se encuentran todos aquellos en los cuales se hace uso de la tarjeta cívica de los vehículos del sistema de Transporte masivo, de la Empresa Metro de Medellín Ltda.</p>
-<ul>
-    <li>Metro</li>
-    <li>Metro Cable</li>
-    <li>MetroPlus</li>
-    <li>Rutas Alimentadoras</li>
-    <li>Tranvía</li>
-</ul>
-<p>Se exceptúan las rutas integradas, las cuales hacen un recorrido
-    desde los barrios hasta las estaciones de la red Metro. 
-    No aplican dado que éstos pertenecen a empresas privadas que presten el servicio de articulación a la red del Sistema Metro.
-    Nota: Sapiencia solo hace el reporte de la presente solicitud a la SECRETARIA DE EDUCACIÓN DEL DISTRITO ESPECIAL DE CIENCIA, 
-    TECNOLOGÍA E INNOVACIÓN DE MEDELLÍN y posteriormente son ellos quienes hacen la validación final de requisitos y reportan oficialmente al METRO. CIRCULAR NÚMERO 202460000077 DE 02/04/2024
-</p>
-
-</div>
-
-<div class="container-fluid py-4">
-
-    <div class="border rounded p-4 bg-white">
+    <div class="border rounded p-4 bg">
 
 <div class="Preguntas_formulario">   
-    <h2>Formulario de solicitud</h2>
-<p>Es indispensable para la solicitud del beneficiario diligenciar completamente este Formulario</p>
+    <h2>Formulario</h2>
+<p>A continuación, encontrarás una serie de preguntas sobre diferentes aspectos de tu vida académica, personal y socioeconómica. Te invitamos a responder de manera sincera y consciente. Tus respuestas no tendrán ninguna repercusión en tu proceso de legalización ni en la continuidad de tu beneficio; únicamente serán utilizadas con fines de caracterización y análisis para fortalecer el acompañamiento que Sapiencia brinda a sus beneficiarios.
+    Es indispensable para la solicitud del beneficiario diligenciar completamente este Formulario</p>
 <form action="{{ route('store') }}" method="POST" enctype="multipart/form-data">
     @csrf   
 @if ($errors->any())
@@ -55,528 +29,289 @@
 </div>
 @endif
     
-<div class="row mb-3 d-flex align-items-stretch">
-        <div class="col-md-6">
-            <div class="pb-2 was-validated">
-    <label for="razones_diligenciamiento" class="form-label mb-2">¿Por qué vas a diligenciar el formulario?</label>
-    <select name="razones_diligenciamiento" id="razones_diligenciamiento" class="form-select" required>
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="Solicitar Beneficio">Solicitar Beneficio</option>
-        <option value="Actualizar información">Actualizar información</option>
-            </select>
-        </div>
-    </div>
- </div>
-    
-    <div class="row mb-3">
-        <div class="col-md-6">
-            <div class="pb-2 was-validated">
-        <label for="tipo_documento" class="form-label mb-2">Tipo de documento</label>
-        <select name="tipo_documento" id="tipo_documento" class="form-select" required>
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="CC">CC</option>
-        <option value="TI">TI</option>
-        <option value="RC">RC</option>
-        <option value="PPT">PPT</option>
-        <option value="NES">NES</option>
-        <option value="NUIP">NUIP</option>
-        <option value="PAP">PAP</option>
-        <option value="PED">PED</option>
-        <option value="CE">CE</option>
-            </select>
-        </div>
-    </div>
- 
-
-    <div class="col-md-6">
-        <div class="pb-2 was-validated">
-        <label for="numero_documento" class="form-label mb-2">Número de documento</label>
-    <input type="text" id="numero_documento" name="numero_documento" class="form-control" minlength="5" maxlength="10" 
-    pattern="[0-9]+" required>
-            </div>
-        </div>
-</div>
-
-        <div class="row mb-3">
+<div class="row mb-3">
             <div class="col-md-3">
                 <div class="nombre">
                     <div class="pb-2 was-validated">
-    <label for="primer_nombre" class="form-label mb-2">Primer nombre</label>
-    <input type="text" id="primer_nombre" name="primer_nombre" class="form-control" required>
+    <label for="nombre1" class="form-label mb-2">Primer nombre</label>
+    <input type="text" id="nombre1" name="nombre1" class="form-control" required>
         </div>
     </div>
 </div>
     <div class="col-md-3"> 
             <div class="pb-2 was-validated">
-    <label for="segundo_nombre" class="form-label mb-2">Segundo nombre</label>
-    <input type="text" id="segundo_nombre" name="segundo_nombre" class="form-control">
+    <label for="nombre2" class="form-label mb-2">Segundo nombre</label>
+    <input type="text" id="nombre2" name="nombre2" class="form-control">
     </div>
 </div>
         <div class="col-md-3">  
             <div class="pb-2 was-validated">
-        <label for="primer_apellido" class="form-label mb-2">Primer apellido</label>
-    <input type="text" id="primer_apellido" name="primer_apellido" class="form-control" required>
+        <label for="apellido1" class="form-label mb-2">Primer apellido</label>
+    <input type="text" id="apellido1" name="apellido1" class="form-control" required>
         </div>
     </div>     
     <div class="col-md-3">
         <div class="pb-2 was-validated">
-        <label for="segundo_apellido" class="form-label mb-2">Segundo apellido</label>
-    <input type="text" id="segundo_apellido" name="segundo_apellido" class="form-control">
+        <label for="apellido2" class="form-label mb-2">Segundo apellido</label>
+    <input type="text" id="apellido2" name="apellido2" class="form-control">
             </div>
         </div>
     </div>
-
-
+    
     <div class="row mb-3">
-        <div class="pb-2 was-validated">
-            <div class="col-md-12">
-        <label for="nombres_apellidos_civica" class="form-label mb-2">Nombres y apellidos (como esta marcada la CÍVICA)</label>
-    <input type="text" id="nombres_apellidos_civica" name="nombres_apellidos_civica" class="form-control" required>
-            </div>
-        </div>
-    </div>
-
-        <div class="col-md-12">
+        <div class="col-md-6">
             <div class="pb-2 was-validated">
-        <label for="genero" class="form-label mb-2">Género</label>
-    <select name="genero" id="genero" class="form-select">
+        <label for="tipodocumento" class="form-label mb-2">Tipo de documento</label>
+        <select name="tipodocumento" id="tipodocumento" class="form-select" required>
         <option value="" selected disabled>Seleccionar</option>
-        <option value="MASCULINO">MASCULINO</option>
-        <option value="FEMENINO">FEMENINO</option>
-        <option value="OTRAS">OTRAS</option>
+        <option value="1">CC</option>
+        <option value="2">TI</option>
+        <option value="3">RC</option>
+        <option value="4">PPT</option>
+        <option value="5">NES</option>
+        <option value="6">NUIP</option>
+        <option value="7">PAP</option>
+        <option value="8">PED</option>
+        <option value="9">CE</option>
             </select>
         </div>
-    </div>
-    
+    </div> 
+
+    <div class="col-md-6">
+        <div class="pb-2 was-validated">
+        <label for="documento" class="form-label mb-2">Número de documento</label>
+    <input type="text" id="documento" name="documento" class="form-control" minlength="5" maxlength="10" 
+    pattern="[0-9]+" required>
+            </div>
+        </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="descripcion" class="form-label mb-2">¿Cómo describirías tu relación con el estudio hasta ahora?</label>
+    <select name="descripcion" id="descripcion" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('descripcion') == 'a')>A) Me resulta fácil y disfruto aprender</option>
+        <option value="2" @selected(old('descripcion') == 'b')>B) Me esfuerzo y obtengo buenos resultados</option>
+        <option value="3" @selected(old('descripcion') == 'c')>C) Me cuesta, pero lo logro</option>
+        <option value="4" @selected(old('descripcion') == 'd')>D) Ha sido una lucha constante</option>
+        <option value="5" @selected(old('descripcion') == 'e')>E) Nunca me lo había preguntado</option>
+    </select>
+</div>
+</div>
 <div class="col-md-6">
     <div class="pb-2 was-validated">
-    <label for="cual" class="form-label mb-2">Cuál?</label>
-    <input type="text" id="cual" name="cual" class="form-control">
+    <label for="investigacioncarrera" class="form-label mb-2">Antes de elegir esta carrera, ¿qué tanto investigaste sobre ella?</label>
+    <select name="investigacioncarrera" id="investigacioncarrera" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('investigacioncarrera') == 'a')>A) La conozco muy bien, investigué bastante</option>
+        <option value="2" @selected(old('investigacioncarrera') == 'b')>B) Tengo una idea general</option>
+        <option value="3" @selected(old('investigacioncarrera') == 'c')>C) Sé poco, me guie por intuición</option>
+        <option value="4" @selected(old('investigacioncarrera') == 'd')>D) No la elegí yo</option>
+        <option value="5" @selected(old('investigacioncarrera') == 'e')>E) Estoy en proceso de conocerla mejor</option>
+    </select>
             </div>
         </div>
+    </div>
 
-
-    <div class="dirección">
-        <div class="mb-3">
-    <p class="mb-2">¿Cuál es la dirección de su residencia?</p>
-</div>
-            <div class="row mb">
-                <div class="col-md-3">
-                    <div class="pb-2 was-validated">
-        <label for="viaprincipal" class="form-label mb-2">Vía principal</label>
-    <select name="viaprincipal" id="viaprincipal" class="form-select" required>
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="AUTOPISTA">AUTOPISTA</option>
-        <option value="AVENIDA">AVENIDA</option>
-        <option value="AVENIDA CALLE">AVENIDA CALLE</option>
-        <option value="AVENIDA CARRERA">AVENIDA CARRERA</option>
-        <option value="BULEVAR">BULEVAR</option>
-        <option value="CALLE">CALLE</option>
-        <option value="CARRERA">CARRERA</option>
-        <option value="CIRCUNVALAR">CIRCUNVALAR</option>
-        <option value="CTAS CORRIDAS">CTAS CORRIDAS</option>
-        <option value="DIAGONAL">DIAGONAL</option>
-        <option value="KILOMETRO">KILOMETRO</option>
-        <option value="OTRA">OTRA</option>
-        <option value="PASAJE">PASAJE</option>
-        <option value="PASEO">PASEO</option>
-        <option value="PEATONAL">PEATONAL</option>
-        <option value="TRANSVERSAL">TRANSVERSAL</option>
-        <option value="TRONCAL">TRONCAL</option>
-        <option value="VARIANTE">VARIANTE</option>
-        <option value="VIA">VIA</option>
-        </select>
-    </div>
-</div>
-
-    <div class="col-md-3">
-        <div class="pb-2 was-validated">
-    <label for="numero" class="form-label mb-2">Número</label>
-    <input type="number" id="numero" name="numero" class="form-control" required>
-    </div>
-</div>
-    <div class="col-md-3">
-        <div class="pb-2 was-validated">
-    <label for="prefijo1" class="form-label mb-2">Prefijo</label>
-    <input type="text" id="prefijo1" name="prefijo1" class="form-control">
-    </div>
-</div>
-    <div class="col-md-3">
-        <div class="pb-2 was-validated">
-    <label for="nombrevia" class="form-label mb-2">Nombre vía </label>
-        <select name="nombrevia" id="nombrevia" class="form-select">
-        <option value="" selected disabled>Seleccione</option>
-        <option value="BIS">BIS</option>
-        <option value="ESTE">ESTE</option>
-        <option value="NORTE">NORTE</option>
-        <option value="OESTE">OESTE</option>
-        <option value="SUR">SUR</option>
-        </select>
-        </div>
-    </div>
-</div>
     <div class="row mb-3">
-            <div class="col-md-3">
-                <div class="pb-2 was-validated">
-        <label for="viasecundaria" class="form-label mb-2">Vía secundaria</label>
-        <input type="number" id="viasecundaria" name="viasecundaria" class="form-control" required>    
-    </div>
+    <div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="preocupacioncosto" class="form-label mb-2">¿Qué es lo que más te preocupa o te ha costado en tu vida universitaria?</label>
+    <select name="preocupacioncosto" id="preocupacioncosto" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('preocupacioncosto') == 'a')>A) El nivel académico</option>
+        <option value="2" @selected(old('preocupacioncosto') == 'b')>B) Organizarme y ser disciplinado</option>
+        <option value="3" @selected(old('preocupacioncosto') == 'c')>C) Aspectos económicos</option>
+        <option value="4" @selected(old('preocupacioncosto') == 'd')>D) Mantener mi red de apoyo</option>
+        <option value="5" @selected(old('preocupacioncosto') == 'e')>E) Aún no lo sé, estoy comenzando</option>
+    </select>
 </div>
-            <div class="col-md-3">
-                <div class="pb-2 was-validated">
-    <label for="prefijo2" class="form-label mb-2">Prefijo</label>
-    <input type="text" id="prefijo2" name="prefijo2" class="form-control" oninput="this.value=this.value.replace(/[^a-zA-Z]/g,'');">
-            </div>
-        </div>
-            <div class="col-md-3">
-                <div class="pb-2 was-validated">
-    <label for="cuadrante" class="form-label mb-2">Cuadrante</label>
-    <select name="cuadrante" id="cuadrante" class="form-select" >
-        <option value="" selected disabled>Seleccione</option>
-        <option value="BIS">BIS</option>
-        <option value="ESTE">ESTE</option>
-        <option value="NORTE">NORTE</option>
-        <option value="OESTE">OESTE</option>
-        <option value="SUR">SUR</option>
-        </select>
-    </div>
 </div>
-        <div class="col-md-3">
-            <div class="pb-2 was-validated">
-    <label for="placa" class="form-label mb-2">Placa</label>
-    <input type="number" id="placa" name="placa" class="form-control">
-            </div>
-        </div>
-    </div>
-</div>                     
-<div class="col-md-12">
-            <div class="pb-2 was-validated">
-    <label for="complemento" class="form-label mb-2">Complemento</label>
-    <input type="text" id="complemento" name="complemento" class="form-control"></label>
-        </div>
-    </div>
-                <div class="col-md-12">
-            <div class="pb-2 was-validated"> 
-                <div id="direccioncompleta" class="form-label mb-2">Dirección completa:
-                <input type="text" id="direccioncompleta" name="direccioncompleta" class="form-control" readonly> 
-            </div>
-        </div>
-    </div>
-                
-        <div class="row mb-3">
-        <div class="col-md-4">
-            <div class="pb-2 was-validated">
-    <label for="municipio_residencia" class="form-label mb-2">Municipio de residencia</label>
-    <select name="municipio_residencia" id="municipio_residencia" class="form-select">
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="BARBOSA">BARBOSA</option>
-        <option value="BELLO">BELLO</option>
-        <option value="CALDAS">CALDAS</option>
-        <option value="COPACABANA">COPACABANA</option>
-        <option value="ENVIGADO">ENVIGADO</option>
-        <option value="ITAGÜI">ITAGÜI</option>
-        <option value="LA_ESTRELLA">LA ESTRELLA</option>
-        <option value="MEDELLÍN">MEDELLÍN</option>
-        <option value="SABANETA">SABANETA</option>
-    </select>
-        </div>
-    </div>
-            <div class="col-md-4">
-                <div class="pb-2 was-validated">
-    <label for="comuna_corregimiento" class="form-label mb-2">Comuna donde vive</label>
-    <select name="comuna_corregimiento" id="comuna_corregimiento" class="form-select">
-        <option value="" selected disabled>Seleccionar</option>
-    </select>
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-                <div class="pb-2 was-validated">
-    <label for="barrio" class="form-label mb-2">Barrio donde vive</label>
-    <select name="barrio" id="barrio" class="form-select">
-        <option value="" selected disabled>Seleccionar</option>
+<div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="familiauniversidad" class="form-label mb-2">¿Tienes familia o amigos que estudian en la universidad?</label>
+    <select name="familiauniversidad" id="familiauniversidad" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('familiauniversidad') == 'a')>A) Ninguna</option>
+        <option value="2" @selected(old('familiauniversidad') == 'b')>B) 1 persona</option>
+        <option value="3" @selected(old('familiauniversidad') == 'c')>C) 2-3 personas</option>
+        <option value="4" @selected(old('familiauniversidad') == 'd')>D) Más de 3</option>
+        <option value="5" @selected(old('familiauniversidad') == 'e')>E) No lo sé con certeza</option>
     </select>
             </div>
-            </div>
+        </div>
+    </div>
 
-        <div class="row g-2 align-items-center mb-3"> 
-            <div class="col-md-4">
-                <div class="p-2 was-validated">
-                <div class="form-group mb-0">
-        <label for="fecha_nacimiento" class="form-label mb-2">Fecha de nacimiento</label>
-    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="form-control">
-        </div>
-    </div>
+   <div class="row mb-3">
+    <div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="responsabilidades" class="form-label mb-2">Además de estudiar ¿Cuáles son tus responsabilidades actuales?</label>
+    <select name="responsabilidades" id="responsabilidades" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('responsabilidades') == 'a')>A) Trabajar</option>
+        <option value="2" @selected(old('responsabilidades') == 'b')>B) Cuidar hijos</option>
+        <option value="3" @selected(old('responsabilidades') == 'c')>C) Cuidar a un familiar</option>
+        <option value="4" @selected(old('responsabilidades') == 'd')>D) Sostenerme económicamente</option>
+        <option value="5" @selected(old('responsabilidades') == 'e')>E) Apoyar económicamente a mi familia</option>
+        <option value="6" @selected(old('responsabilidades') == 'f')>F) Ninguna adicional</option>    
+    </select>
 </div>
-    <div class="col-md-4">
-    <div class="alert alert-info">
-        Edad: <span id="resultadoEdad" class="fw-bold">0</span> años
-                </div>
+</div>
+<div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="conquienvivira" class="form-label mb-2">¿Con quién vivirás durante tus estudios y con quien?</label>
+    <select name="conquienvivira" id="conquienvivira" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('conquienvivira') == 'a')>A) Solo</option>
+        <option value="2" @selected(old('conquienvivira') == 'b')>B) Con familiares</option>
+        <option value="3" @selected(old('conquienvivira') == 'c')>C) Con amigos</option>
+        <option value="4" @selected(old('conquienvivira') == 'd')>D) Más de 3</option>
+        <option value="5" @selected(old('conquienvivira') == 'e')>E) No lo sé con certeza</option>
+    </select>
             </div>
         </div>
-<div class="relevante">
+    </div>
+
+   <div class="row mb-3">
+    <div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="trabajo" class="form-label mb-2">¿Trabajas actualmente o planeas hacerlo mientras estudias?</label>
+    <select name="trabajo" id="trabajo" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('trabajo') == 'a')>A) No</option>
+        <option value="2" @selected(old('trabajo') == 'b')>B) Sí, menos de 20 horas semanales</option>
+        <option value="3" @selected(old('trabajo') == 'c')>C) Sí, más de 20 horas semanales</option>
+        <option value="4" @selected(old('trabajo') == 'd')>D) Trabajo de forma informal u ocasional</option>
+        <option value="5" @selected(old('trabajo') == 'e')>E) No sé aún</option>    </select>
+</div>
+</div>
+<div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="llegadauniversidad" class="form-label mb-2">¿Cómo llegas o planeas llegar a la universidad?</label>
+    <select name="llegadauniversidad" id="llegadauniversidad" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('llegadauniversidad') == 'a')>A) En transporte propio o familiar</option>
+        <option value="2" @selected(old('llegadauniversidad') == 'b')>B) En transporte público, lo tengo resuelto</option>
+        <option value="3" @selected(old('llegadauniversidad') == 'c')>C) En transporte público, es un gasto que me preocupa</option>
+        <option value="4" @selected(old('llegadauniversidad') == 'd')>D) Depende del día, no siempre tengo o tendré como</option>
+        <option value="5" @selected(old('llegadauniversidad') == 'e')>E) He buscado o me interesa buscar apoyo en la universidad para esto</option>
+    </select>
+            </div>
+        </div>
+    </div>
+
+       <div class="row mb-3">
+    <div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="almuerzo" class="form-label mb-2">¿Dónde almuerzas o planeas almorzar en tus días de universidad?</label>
+    <select name="almuerzo" id="almuerzo" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('almuerzo') == 'a')>A) Llevo o llevaré comida de casa</option>
+        <option value="2" @selected(old('almuerzo') == 'b')>B) Como o comeré en la universidad o cerca</option>
+        <option value="3" @selected(old('almuerzo') == 'c')>C) Como o comeré donde pueda según el día</option>
+        <option value="4" @selected(old('almuerzo') == 'd')>D) Muchas veces no almuerzo o no podré almorzar</option>
+        <option value="5" @selected(old('almuerzo') == 'e')>E) He buscado o me interesa buscar apoyo en la universidad para esto</option>    </select>
+</div>
+</div>
+<div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="reaccionantedificultad" class="form-label mb-2">Cuando las cosas se ponen difíciles ¿qué haces normalmente?</label>
+    <select name="reaccionantedificultad" id="reaccionantedificultad" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('reaccionantedificultad') == 'a')>A) Busco ayuda en alguien de confianza</option>
+        <option value="2" @selected(old('reaccionantedificultad') == 'b')>B) Lo resuelvo solo(a)</option>
+        <option value="3" @selected(old('reaccionantedificultad') == 'c')>C) Busco orientacion en servicios de apoyo institucional</option>
+        <option value="4" @selected(old('reaccionantedificultad') == 'd')>D) Me bloqueo y lo postergo</option>
+        <option value="5" @selected(old('reaccionantedificultad') == 'e')>E) Depende mucho de la situación</option>
+    </select>
+            </div>
+        </div>
+    </div>
+
+           <div class="row mb-3">
+    <div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="animoestudio" class="form-label mb-2">¿Cómo describirías tu estado de ánimo actual frente al estudio?</label>
+    <select name="animoestudio" id="animoestudio" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('animoestudio') == 'a')>A) Bien, con energía y claridad</option>
+        <option value="2" @selected(old('animoestudio') == 'b')>B) Motivado(a) pero nervioso(a) o con presiones</option>
+        <option value="3" @selected(old('animoestudio') == 'c')>C) Inseguro(a), con muchas dudas</option>
+        <option value="4" @selected(old('animoestudio') == 'd')>D) Bajo mucha presión</option>
+        <option value="5" @selected(old('animoestudio') == 'e')>E) Constantemente me siento confundido</option>    </select>
+</div>
+</div>
+<div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="reaccionantedificultad" class="form-label mb-2">Cuando las cosas se ponen difíciles ¿qué haces normalmente?</label>
+    <select name="reaccionantedificultad" id="reaccionantedificultad" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('reaccionantedificultad') == 'a')>A) Busco ayuda en alguien de confianza</option>
+        <option value="2" @selected(old('reaccionantedificultad') == 'b')>B) Lo resuelvo solo(a)</option>
+        <option value="3" @selected(old('reaccionantedificultad') == 'c')>C) Busco orientacion en servicios de apoyo institucional</option>
+        <option value="4" @selected(old('reaccionantedificultad') == 'd')>D) Me bloqueo y lo postergo</option>
+        <option value="5" @selected(old('reaccionantedificultad') == 'e')>E) Depende mucho de la situación</option>
+    </select>
+            </div>
+        </div>
+    </div>
     <div class="row mb-3">
-            <div class="col-md-4">
-                <div class="pb-2 was-validated">
-        <label for="estrato_socioeconomico" class="form-label mb-2">Estrato socioeconómico</label>
-            <select name="estrato_socioeconomico" id="estrato_socioeconomico" class="form-select" required>
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-    </select>
-        </div>
-    </div>
-        <div class="col-md-4">
-            <div class="pb-2 was-validated">    
-                <label for="sisben" class="form-label mb-2">Puntaje SISBEN</label>
-    <select name="sisben" id="sisben" class="form-select" required>
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-        <option value="D">D</option>
-        <option value="No_tiene">No tiene</option>
-    </select>
-    </div>
-</div>
-    
-    <div class="col-md-4">
-        <div class="was-validated">
-    <label for="celular" class="form-label mb-2">Teléfono célular</label>
-    <input type="tel" name="celular" id="celular" class="form-control" required maxlength="10" minlength="10" pattern="[0-9]{10}">
-            </div>
-        </div>
-    </div>
-</div>
-    
-<div class="escolar">    
-<div class="row mb-3">
-        
-        <div class="col-md-4">
-        <div class="pb-2 was-validated">
-        <label for="nivel_academico" class="form-label mb-2">Nivel académico</label>
-    <select name="nivel_academico" id="nivel_academico" class="form-select" required>
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="PRIMARIA">PRIMARIA</option>
-        <option value="SECUNDARIA">SECUNDARIA</option>
-        <option value="MEDIA">MEDIA</option>
-        <option value="SUPERIOR">SUPERIOR</option>
-    </select>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="pb-2 was-validated">
-            <div id="gradoContainer">
-    <label for="grado" class="form-label mb-2">Grado</label>
-    <select name="grado" id="grado" class="form-select">
-        <option value="" selected disabled>Seleccionar</option>
-    </select>
-            </div>
-</div>
-</div>
-
-    <div class="col-md-4" id="semestreContainer" style="display:none;"> 
-        <div class="pb-2 was-validated"> 
-            <label for="semestre" class="form-label mb-2">Semestre</label> 
-            <select id="semestre" name="semestre" class="form-select"> 
-                <option value="" selected disabled>Seleccionar</option> 
-                <option value="1">1</option> 
-                <option value="2">2</option> 
-                <option value="3">3</option> 
-                <option value="4">4</option> 
-                <option value="5">5</option> 
-                <option value="6">6</option> 
-                <option value="7">7</option> 
-                <option value="8">8</option> 
-                <option value="9">9</option> 
-                <option value="10">10</option> 
-            </select> 
-        </div> 
-    </div> 
-    </div>
-    </div>
-
-<div class="row mb-3">
-    <div class="col-md-4">
+    <div class="col-md-6">
     <div class="pb-2 was-validated">
-<label for="numero_civica" class="form-label mb-2">Número de cívica</label>
-<input type="text" name="numero_civica" id="numero_civica"  class="form-control" minlength="5" maxlength="10" 
-    pattern="[0-9]+" required>
-        </div>
-    </div>
-
-<div class="col-md-4">
+    <label for="apoyoproceso" class="form-label mb-2">¿Tienes al menos una persona cercana que te apoye en este proceso?</label>
+    <select name="apoyoproceso" id="apoyoproceso" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('apoyoproceso') == 'a')>A) Sí, varias</option>
+        <option value="2" @selected(old('apoyoproceso') == 'b')>B) Sí, una persona</option>
+        <option value="3" @selected(old('apoyoproceso') == 'c')>C) Quizás exista alguien</option>
+        <option value="4" @selected(old('apoyoproceso') == 'd')>D) Prefiero manejarlo de forma independiente</option>
+        <option value="5" @selected(old('apoyoproceso') == 'e')>E) No tengo a nadie cercano</option>    </select>
+</div>
+</div>
+<div class="col-md-6">
     <div class="pb-2 was-validated">
-    <label for="presenta_discapacidad" class="form-label mb-2">¿Presenta Discapacidad?</label>
-    <select name="presenta_discapacidad" id="presenta_discapacidad" class="form-select" required>
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="SI">SI</option>
-        <option value="NO">NO</option>
-    </select>
-    </div>
-</div>
-<div class="col-md-4" id="tipo_discapacidadContainer" style="display:none;">
-    <div class="pb-2 was-validated">
-    <label for="tipo_discapacidad" class="form-label mb-2">Tipo de discapacidad</label>
-    <select name="tipo_discapacidad" id="tipo_discapacidad" class="form-select">
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="FISICA">FÍSICA</option>
-        <option value="SENSORIAL">SENSORIAL</option>
-        <option value="INTELECTUAL">INTELECTUAL</option>
-        <option value="PSIQUICA">PSIQUICA</option>
-        <option value="MULTIPLE">MULTIPLE</option>
-    </select>
-</div>
-</div>
-</div>
-
-<div class="row mb-3">
-    <div class="col-md-4">
-    <div class="pb-2 was-validated">
-    <label for="beneficio_sapiencia" class="form-label mb-2">¿Qué beneficio tiene activo con sapiencia?</label>
-    <select name="beneficio_sapiencia" id="beneficio_sapiencia" class="form-select" required>
-        <option value="" selected disabled>Seleccionar</option>
-        <option value="VISION4RIOS">VISION4RIOS</option>
-        <option value="MATRICULA_CERO">MATRICULA CERO</option>
-        <option value="FONDOS_PREGRADO">FONDOS PREGRADO</option>
-        <option value="FONDOS_POSGRADO">FONDOS POSGRADO</option>
-        <option value="MEJORES_BACHILLERES">MEJORES BACHILLERES</option>
-        <option value="MEJORES DEPORTISTAS">MEJORES DEPORTISTAS</option>
-        <option value="@MEDELLÍN">@MEDELLÍN</option>
-        <option value="BILINGÜISMO">BILINGÜISMO</option>
+    <label for="actividadsentirbien" class="form-label mb-2">Por fuera del estudio ¿qué actividad te recarga o te hace sentir bien?</label>
+    <select name="actividadsentirbien" id="actividadsentirbien" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('actividadsentirbien') == 'a')>A) Deporte o actividad física</option>
+        <option value="2" @selected(old('actividadsentirbien') == 'b')>B) Arte, música o expresión creativa</option>
+        <option value="3" @selected(old('actividadsentirbien') == 'c')>C) Estar con personas</option>
+        <option value="4" @selected(old('actividadsentirbien') == 'd')>D) Estar solo(a), leer, series, videojuegos</option>
+        <option value="5" @selected(old('actividadsentirbien') == 'e')>E) No tengo una actividad así actualmente</option>
     </select>
             </div>
         </div>
     </div>
-
-        <div class="botón_adjunto">    
-                <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modalDoc">Copia del documento de identificación</button>
-        <div class="modal fade" id="modalDoc" tabindex="-1" aria-labelledby="modalDoclabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content shadow-lg">
-                    <div class="modal-body">
-                                <p class="fw-bold text-center mb-3">Adjuntar documento identidad</p>
-                        <div class="mb-3">
-                                <label class="form-label">Elegir archivo</label>     
-                                <label for="doc_identidad" class="form-label">Elegir archivo</label>
-                        <input type="file" id="doc_identidad" name="doc_identidad" class="form-control" accept=".pdf,.jpg,.png">
-                                <div class="form-text text-danger mt-2">Solo se permiten archivos PDF, JPG o PNG de máximo 2MB
-                                </div>
-                            </div>    
-                    </div>
-                <div class="modal-footer"> 
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button> 
-            </div> 
-        </div> 
+    <div class="row mb-3">
+    <div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="interes" class="form-label mb-2">¿Qué tanto te interesa conectarte con otros estudiantes y participar en actividades culturales, deportivas, grupos de estudio, semilleros de investigación, voluntariados, entre otras? </label>
+    <select name="interes" id="interes" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('interes') == 'a')>A) Mucho, si surge naturalmente</option>
+        <option value="2" @selected(old('interes') == 'b')>B) Algo, si surge naturalmente</option>
+        <option value="3" @selected(old('interes') == 'c')>C) Poco, prefiero mantener enfocado(a) en lo académico</option>
+        <option value="4" @selected(old('interes') == 'd')>D) Me gustaría, pero me cuesta relacionarme</option>
+        <option value="5" @selected(old('interes') == 'e')>E) No lo había pensado</option>    </select>
+</div>
+</div>
+<div class="col-md-6">
+    <div class="pb-2 was-validated">
+    <label for="perteneceequipo" class="form-label mb-2">¿Perteneces o has pertenecido a algún grupo, equipo o comunidad organizada?</label>
+    <select name="perteneceequipo" id="perteneceequipo" class="form-select" required>
+        <option value="" disabled selected>Selecciona una opción...</option>
+        <option value="1" @selected(old('perteneceequipo') == 'a')>A) Sí, actualmente</option>
+        <option value="2" @selected(old('perteneceequipo') == 'b')>B) Sí, antes pero ya no</option>
+        <option value="3" @selected(old('perteneceequipo') == 'c')>C) No, pero me gustaría</option>
+        <option value="4" @selected(old('perteneceequipo') == 'd')>D) Lo he intentado, pero no he encontrado el espacio adecuado</option>
+        <option value="5" @selected(old('perteneceequipo') == 'e')>E) No, y no es algo que me interese</option>
+    </select>
+            </div>
+        </div>
     </div>
-</div>
-
-<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal2Doc">Copia de servicios públicos domiciliarios</button>
-                    <div class="modal fade" id="modal2Doc" tabindex="-1" aria-labelledby="modal2Doclabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content shadow-lg">
-                                <div class="modal-body">
-                                <p class="fw-bold text-center mb-3">Adjuntar copia de servicios públicos domiciliarios</p>
-                                <div class="mb-3">
-                                    <label for="publicos" class="form-label">Elegir archivo</label>
-                        <input type="file" id="publicos" name="publicos" class="form-control" accept=".pdf,.jpg,.png">
-                                <div class="form-text text-danger mt-2">Solo se permiten archivos PDF, JPG o PNG de máximo 2MB
-                                </div>
-                            </div>   
-                    </div>
-                <div class="modal-footer"> 
-                <button type="button" class="btn btn-secondary-success" data-bs-dismiss="modal">Salir</button> 
-            </div> 
-        </div> 
-    </div>
-</div>
-<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal3Doc">Copia de la tarjeta cívica</button>
-                    <div class="modal fade" id="modal3Doc" tabindex="-1" aria-labelledby="modal3Doclabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content shadow-lg">
-                                <div class="modal-body">
-                                <p class="fw-bold text-center mb-3">Adjuntar copia de la tarjeta cívica</p>
-                                <div class="mb-3">
-                                    <label for="civica" class="form-label">Elegir archivo</label>
-                        <input type="file" id="civica" name="civica" class="form-control" accept=".pdf,.jpg,.png">
-                                <div class="form-text text-danger mt-2">Solo se permiten archivos PDF, JPG o PNG de máximo 2MB
-                                </div>
-                            </div>    
-                    </div>
-                <div class="modal-footer"> 
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button> 
-            </div> 
-        </div> 
-    </div>
-</div>
-
-<button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal4Doc">Certificado de discapacidad o historia clínica</button>
-                    <div class="modal fade" id="modal4Doc" tabindex="-1" aria-labelledby="modal4Doclabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content shadow-lg">
-                                <div class="modal-body">
-                                <p class="fw-bold text-center mb-3">Adjuntar certificado de discapacidad o historia clínica</p>
-                                <div class="mb-3">
-                                    <label for="discapacidad" class="form-label">Elegir archivo</label>
-                        <input type="file" id="discapacidad" name="discapacidad" class="form-control" accept=".pdf,.jpg,.png">
-                                <div class="form-text text-danger mt-2">Solo se permiten archivos PDF, JPG o PNG de máximo 2MB
-                                </div>
-                            </div> 
-                        </div>
-                <div class="modal-footer"> 
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Salir</button> 
-            </div> 
-        </div> 
-    </div>  
-</div>
-                </div>
-
-<div class="box_privacidad"><p>Es importante señalar que todo estudiante que requiere del PERFIL ESTUDIANTIL (TIQUETE METRO) deberá tener la tarjeta 
-cívica personalizada, ya que es a través de este documento, es asignado el beneficio. En caso que el estudiante realice cambio del tipo o 
-del número de documento de identidad, deberá acercarse a los Puntos de Atención al Cliente -PAC-de La Empresa Metro de Medellín, para solicitar 
-la actualización de su tarjeta cívica. En caso de pérdida o reposición de la tarjeta cívica, el estudiante deberá acercarse a un Punto de 
-Atención al Cliente -PAC- del Metro de Medellín, para reportar su perdida y realizar el trámite para la expedición de una nueva tarjera cívica
-    y necesariamente deberá reportar el cambio a Sapiencia, para que, en el siguiente informe, se envíe el reporte actualizado de la información 
-    del estudiante beneficiario.
-    En observancia de la Ley 1581 de 2012, reglamentada parcialmente por el Decreto 1377 de 2013 yen la Política de uso y tratamiento de datos 
-    adoptado por SAPIENCIA, la importancia de la neutralidad de los medios tecnológicos y de comunicación, e 
-    interpretando todos estos de manera sistémica e integral en aras de la protección de los derechos y principios que circundan el Habeas Data 
-    y el Tratamiento de Datos Personales, se establecen las siguientes condiciones:</p>
-    <ol>
-        <b><li>FINALIDAD DEL TRATAMIENTO DE LOS DATOS PERSONALES PARA PERSONAJURÍDICA Y NATURAL:</b></li><ol type="a"> 
-        <li>el cumplimiento del lleno de requisitos formales para la suscripción de actas de compromiso y la posterior aplicación de los derechos y 
-            obligaciones que surgen entre las partes con ocasión de su suscripción.</li>
-        <li>el cumplimiento de la Ley de Transparencia y el Derecho de Acceso a la Información Pública Nacional (Ley 1712 del 2014).</li>
-        <li>La presentación de informes a los organismos de control.</li>
-        <li>para la entrega de información a entidades cuyo objeto social y/o misional incluya la recolección de datos estadísticos, históricos 
-            y científicos.</li>
-        <li>por solicitud de autoridad judicial. Manifiesto que me informaron que, si soy menor de edad y/o en caso de recolección de mi información sensible, 
-            tengo derecho a contestar o no las preguntas que me formulen y a entregar o no los datos solicitados. Entiendo que son datos sensibles 
-            aquellos que afectan la intimidad del titular o cuyo uso indebido pueda generar discriminación (información étnica, racial, su 
-            orientación política, convicciones religiosas o filosóficas, la pertenencia a sindicatos, organizaciones sociales, de derechos humanos, 
-            así como los relativos a la salud, vida sexual y datos biométricos). Manifiesto que me informaron que los datos sensibles que se 
-            recolectarán serán utilizados para las finalidades descritas por la Agencia (Uso, recolección, actualización, transferencia)</li></ol type="a">
-<p>Nota: Cualquier uso de la información distinto a lo aquí establecido, no es aceptado ni permitido por SAPIENCIA</p>
-        <b><li>AVISO DE PRIVACIDAD:</b></li><p>Para los efectos de esta cláusula y del aviso de privacidad, se consideran datos sensibles aquellos que puedan revelar 
-            aspectos como origen racial o étnico, estado de salud presente y futura, información genética, creencias religiosas, filosóficas y morales, afiliación 
-            sindical, opiniones políticas, preferencia sexual y todos aquellos datos que puedan afectar la intimidad del titular o cuyo uso indebido pueda 
-            generar su discriminación. Respecto a estos SAPIENCIA se obliga al uso adecuado de los mismos en concordancia con la normativa vigente, la buena fe, 
-            el orden público y el presente Aviso.</p>
-        <b><li>MECANISMOS PARA LA PROTECCIÓN DE DATOS PERSONALES: ACCESO,RECTIFICACIÓN, CANCELACIÓN U OPOSICIÓN:</b></li><p>la persona natural o jurídica Titular de Datos Personales puede solicitar a SAPIENCIA en cualquier momento, el acceso, la rectificación, la cancelación u oposición respecto a los datos personales que le conciernen, en este sentido, presentará su solicitud radicándola directamente en la Entidad o ingresando a la página web 
-        http://www.sapiencia.gov.co en la opción de Contáctenos o escribiendo al correo electrónicoinfo@sapiencia.gov.co o comunicándose al teléfono en Medellín:
-            (+57 4) 4447947.</p>
-    </ol>
-    <p>PARÁGRAFO: con la suscripción de este formulario se entiende aceptada la finalidad del tratamiento de datos y que conoce los mecanismos para su protección.</p>
-                </div>
-    <div class="form-check">
-    <input class="form-check-input" type="checkbox" id="acepto" name="terminos" value="on" requiered>
-<label class="form-check-label" for="acepto">Acepto términos y condiciones</label>
-                </div>
+    <input type="hidden" name="periodo" value="16">
 <div class="mb-3 text-center">
 <button type="submit" class="btn btn-outline-success">
     Enviar formulario completo
